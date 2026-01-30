@@ -7,6 +7,11 @@ import streamlit as st
 from todoitem import Todo
 from todolist import ToDoList
 
+st.set_page_config(
+    page_title="To-Do List Manager",
+    page_icon=":streamlit:"
+)
+
 def add_todo():
     new_todo = Todo(st.session_state.new_task)
     todo_list.add_todo_item(new_todo)
