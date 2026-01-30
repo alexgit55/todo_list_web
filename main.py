@@ -13,8 +13,13 @@ def add_todo():
     todo_list.save_items_to_file()
     st.session_state.new_task = ""
 
+
+
 todo_list = ToDoList()
 st.title("To-Do List Manager")
+
+st.text_input("", placeholder="Enter a task...", key="new_task", on_change=add_todo)
+
 for index, todo in enumerate(todo_list.get_todo_items(), 1):
     checkbox = st.checkbox(f"{todo}", key=todo.task)
     if checkbox:
@@ -23,4 +28,4 @@ for index, todo in enumerate(todo_list.get_todo_items(), 1):
         del st.session_state[todo.task]
         st.rerun()
 
-st.text_input("", placeholder="Enter a task...", key="new_task", on_change=add_todo)
+
