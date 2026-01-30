@@ -1,3 +1,7 @@
+"""
+To-Do List Manager with Streamlit
+"""
+
 import streamlit as st
 
 from todoitem import Todo
